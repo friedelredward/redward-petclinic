@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.example</groupId>
         <artifactId>redward-petclinic</artifactId>
-        <version>0.0.2</version>
+        <version>0.0.3-SNAPSHOT</version>
     </parent>
 
     <artifactId>pet-clinic-web</artifactId>
@@ -17,7 +17,7 @@
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>pet-clinic-datas</artifactId>
-            <version>0.0.2</version>
+            <version>0.0.3-SNAPSHOT</version>
         </dependency>
 
         <dependency>
