@@ -30,6 +30,7 @@
                     <checkModificationExcludes>
                         <checkModificationExclude>pom.xml</checkModificationExclude>
                     </checkModificationExcludes>
+                    <autoVersionSubmodule>true</autoVersionSubmodule>
                 </configuration>
             </plugin>
         </plugins>
