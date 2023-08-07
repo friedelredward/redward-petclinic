@@ -3,7 +3,7 @@ package com.example.redwardpetclinic.model;
 /**
  * Created by r.edward on {07/08/2023}
  */
-public class PetType {
+public class PetType extends BaseEntity{
     private String name;
 
     public String getName() {
