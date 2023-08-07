@@ -2,15 +2,10 @@ package com.example.redwardpetclinic.services;
 
 import com.example.redwardpetclinic.model.Owner;
 
-import java.util.Set;
-
 /**
  * Created by r.edward on {07/08/2023}
+ * ass soon as we extend we get an indicator becaus methods are implemented(yellow)
  */
-public interface OwnerService {
+public interface OwnerService extends CrudService<Owner, Long>{
     Owner findByLastName(String lastName);
-    Owner save(Owner owner);
-    Owner findById(Long id);
-    Set<Owner> findAll();
-
 }
