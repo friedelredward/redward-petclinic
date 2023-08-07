@@ -5,3 +5,9 @@
   - Ojo con la ruta al hacer refactoR!! needs package and route 
   como en app origina con artifact inverted
     (com.example.redwardpetclinic)
+
+- maven-release-plugin with developer connection
+```
+mvn release:prepare
+mvn:release:perform
+```
