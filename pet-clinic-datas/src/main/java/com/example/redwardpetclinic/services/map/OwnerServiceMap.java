@@ -1,14 +1,18 @@
 package com.example.redwardpetclinic.services.map;
 
 import com.example.redwardpetclinic.model.Owner;
-import com.example.redwardpetclinic.services.CrudService;
+import com.example.redwardpetclinic.services.OwnerService;
 
+import java.util.Optional;
 import java.util.Set;
 
 /**
  * Created by r.edward on {08/08/2023}
+ * we no longer extend from CRUDRepo but from OWNERService
+ * since it(OWNERService) extends CRUD Service directly
  */
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+//public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
         /*because abstract we use super not this !!!!*/
@@ -34,5 +38,17 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     @Override
     public Owner findById(Long id) {
         return super.findById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        Owner foundOwner= null;
+//        new ArrayList<Owner>(map.values()).stream().filter(); ;
+        Optional<Owner> optionalfind = map.values().stream()
+                .filter(owner -> owner.getLastName().equals(lastName)).findFirst();
+        if(optionalfind.isPresent()){
+            foundOwner= optionalfind.get();
+        }
+        return foundOwner;
     }
 }
