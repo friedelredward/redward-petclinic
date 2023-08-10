@@ -3,8 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Owners List</title>
+    <style>
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+
+}
+legend{
+    font-family: "Roboto Light", Verdana, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+    </style>
 </head>
 <body>
-    <h1 th:text="'This is Owners List Page'">Vets list...</h1>
+    <h1 th:text="'This is Owners List Page'">Owners list...</h1>
+    <table class="styled-table">
+        <legend>Owners Table</legend>
+        <tr>
+            <th>IDs</th>
+            <th>Name</th>
+        </tr>
+        <!--Please note template Safe navigation-->
+        <tr th:each="owner : ${owners}">
+            <td th:text="${owner?.id}">2.41</td>
+            <td th:text="${owner?.firstName}">Onions</td>
+        <tr>
+    </table>
 </body>
 </html>
