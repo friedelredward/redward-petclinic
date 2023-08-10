@@ -13,3 +13,8 @@ mvn:release:perform
 ```
 
 Beware el dataload (boostrap se hace en el modulo web no el de datos) , pure model.
+
+> tip: to DI:: ..private final ...Service; Alt+Enter> add Constructor parameter.
+
+### [Thymeleaf_CheatSheet](https://github.com/engma/thymeleaf-cheat-sheet)
+

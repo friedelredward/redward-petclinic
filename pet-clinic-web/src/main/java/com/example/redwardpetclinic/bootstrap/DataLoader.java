@@ -42,11 +42,13 @@ remember to annotate with serve the implementation ...ServiceMap
 
         Vet v1= new Vet();
         v1.setFirstName("Lucky");
+        v1.setLastName("Friedel");
         v1.setId(1L);
         vetService.save(v1);
 
         Vet v2= new Vet();
         v2.setFirstName("Maromo");
+        v2.setLastName("MaromoFamily");
         v2.setId(2L);
         vetService.save(v2);
 
