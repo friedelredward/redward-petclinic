@@ -18,3 +18,5 @@ Beware el dataload (boostrap se hace en el modulo web no el de datos) , pure mod
 
 ### [Thymeleaf_CheatSheet](https://github.com/engma/thymeleaf-cheat-sheet)
 
+### [(How to manage ENV variables  PDF_here)](https://github.com/friedelredward/redward-petclinic/ExternalPropertiesOverview.pdf)
+- Also spring Cloud Config as alternative
