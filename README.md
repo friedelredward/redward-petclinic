@@ -11,3 +11,5 @@
 mvn release:prepare
 mvn:release:perform
 ```
+
+Beware el dataload (boostrap se hace en el modulo web no el de datos) , pure model.
