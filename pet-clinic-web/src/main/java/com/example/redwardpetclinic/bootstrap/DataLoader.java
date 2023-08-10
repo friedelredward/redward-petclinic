@@ -2,8 +2,8 @@ package com.example.redwardpetclinic.bootstrap;
 
 import com.example.redwardpetclinic.model.Owner;
 import com.example.redwardpetclinic.model.Vet;
-import com.example.redwardpetclinic.services.map.OwnerServiceMap;
-import com.example.redwardpetclinic.services.map.VetServiceMap;
+import com.example.redwardpetclinic.services.OwnerService;
+import com.example.redwardpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -12,12 +12,20 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DataLoader implements CommandLineRunner {
-    private final OwnerServiceMap ownerServiceMap;
-    private final VetServiceMap vetServiceMap;
+    private final OwnerService ownerService;
+    private final VetService vetService;
+
+/*lets inject this the spring way!!
+remember to annotate with serve the implementation ...ServiceMap
 
     public DataLoader() {
-        ownerServiceMap = new OwnerServiceMap();
-        vetServiceMap = new VetServiceMap();
+        ownerService = new OwnerServiceMap();
+        vetService = new VetServiceMap();
+    }*/
+
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
@@ -25,22 +33,22 @@ public class DataLoader implements CommandLineRunner {
         Owner o1= new Owner();
         o1.setFirstName("bill");
         o1.setId(1L);
-        ownerServiceMap.save(o1);
+        ownerService.save(o1);
 
         Owner o2= new Owner();
         o2.setFirstName("Bob");
         o2.setId(2L);
-        ownerServiceMap.save(o2);
+        ownerService.save(o2);
 
         Vet v1= new Vet();
         v1.setFirstName("Lucky");
         v1.setId(1L);
-        vetServiceMap.save(v1);
+        vetService.save(v1);
 
         Vet v2= new Vet();
         v2.setFirstName("Maromo");
         v2.setId(2L);
-        vetServiceMap.save(v2);
+        vetService.save(v2);
 
         System.out.println("loaded Owners and Vets");
     }

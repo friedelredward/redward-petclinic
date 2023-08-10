@@ -2,6 +2,7 @@ package com.example.redwardpetclinic.services.map;
 
 import com.example.redwardpetclinic.model.Owner;
 import com.example.redwardpetclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
  * since it(OWNERService) extends CRUD Service directly
  */
 //public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
