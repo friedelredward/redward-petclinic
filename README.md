@@ -20,3 +20,4 @@ Beware el dataload (boostrap se hace en el modulo web no el de datos) , pure mod
 
 ### [(How to manage ENV variables  PDF_here)](https://github.com/friedelredward/redward-petclinic/ExternalPropertiesOverview.pdf)
 - Also spring Cloud Config as alternative
+- DOCs Externalized Configuration : https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-external-config
