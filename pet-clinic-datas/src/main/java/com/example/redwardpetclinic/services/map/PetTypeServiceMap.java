@@ -1,7 +1,7 @@
 package com.example.redwardpetclinic.services.map;
 
-import com.example.redwardpetclinic.model.Pet;
-import com.example.redwardpetclinic.services.PetService;
+import com.example.redwardpetclinic.model.PetType;
+import com.example.redwardpetclinic.services.PetTypeService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -10,10 +10,11 @@ import java.util.Set;
  * Created by r.edward on {08/08/2023}
  * We could make the abstract implement th interface CRUD and then extend
  */
+/*sin service Spring no lo ve!!!! OJO remember!! thjis is the impl we need in the container!!*/
 @Service
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
+public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
     @Override
-    public Set<Pet> findAll() {
+    public Set<PetType> findAll() {
         return super.findAll();
     }
 
@@ -23,17 +24,17 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetS
     }
 
     @Override
-    public void delete(Pet object) {
+    public void delete(PetType object) {
         super.delete(object);
     }
 
     @Override
-    public Pet save(Pet object) {
+    public PetType save(PetType object) {
         return super.save(object);
     }
 
     @Override
-    public Pet findById(Long id) {
+    public PetType findById(Long id) {
         return super.findById(id);
     }
 }
