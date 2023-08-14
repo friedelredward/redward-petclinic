@@ -38,6 +38,16 @@ remember to annotate with serve the implementation ...ServiceMap
 
     @Override
     public void run(String... args) throws Exception {
+        //if no pet types, load data
+        if(petTypeService.findAll().isEmpty()){
+            loadData();
+        }
+    }
+
+    /**
+     * Loads mock data by service on each boot
+     * */
+    private void loadData() {
         //we save these because we need them with id when we add them to
 //        bigger entity
         PetType petType= new PetType();
@@ -75,7 +85,6 @@ remember to annotate with serve the implementation ...ServiceMap
         ownerService.save(o1);
 
 
-
         Owner o2= new Owner();
         o2.setFirstName("Bob");
         o2.setId(2L);
@@ -84,7 +93,7 @@ remember to annotate with serve the implementation ...ServiceMap
         o2.setTelefone("000000000021");
 
         Pet bobsPet= new Pet();
-        bobsPet.setPetType(petTypeCat);//first we handle pettype [the most nested]
+        bobsPet.setPetType(savedCatType);//first we handle pettype [the most nested]
         bobsPet.setName("Good Cat");
         bobsPet.setBirthDate(LocalDate.now());
         bobsPet.setOwner(o1); //add owner then add to owner
@@ -103,8 +112,8 @@ remember to annotate with serve the implementation ...ServiceMap
         v2.setFirstName("Maromo");
         v2.setLastName("MaromoFamily");
         v2.setId(2L);
-        vetService.save(v2);
         v2.getSpecialties().add(savedSurgery);
+        vetService.save(v2);
         System.out.println("loaded Owners and Vets");
     }
 }
