@@ -1,5 +1,6 @@
 package com.example.redwardpetclinic.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Set;
  * what hibernate does auto.
  */
 public class Owner extends Person{
-    private Set<Pet> pets;
+    private Set<Pet> pets= new HashSet<>();
     private String address;
     private String city;
     private String telefone;

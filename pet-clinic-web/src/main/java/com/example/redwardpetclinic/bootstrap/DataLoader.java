@@ -1,6 +1,7 @@
 package com.example.redwardpetclinic.bootstrap;
 
 import com.example.redwardpetclinic.model.Owner;
+import com.example.redwardpetclinic.model.Pet;
 import com.example.redwardpetclinic.model.PetType;
 import com.example.redwardpetclinic.model.Vet;
 import com.example.redwardpetclinic.services.OwnerService;
@@ -8,6 +9,8 @@ import com.example.redwardpetclinic.services.PetTypeService;
 import com.example.redwardpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 /**
  * Created by r.edward on {10/08/2023}
@@ -48,7 +51,17 @@ remember to annotate with serve the implementation ...ServiceMap
         o1.setAddress("Miami etc");
         o1.setCity("miami city");
         o1.setTelefone("00000000000");
+
+        Pet bilsPet= new Pet();
+        bilsPet.setPetType(savedPetType);//first we handle pettype [the most nested]
+        bilsPet.setName("Good DOG");
+        bilsPet.setBirthDate(LocalDate.now());
+        bilsPet.setOwner(o1); //add owner then add to owner
+        o1.getPets().add(bilsPet);
+        //salvamos el owner al final
         ownerService.save(o1);
+
+
 
         Owner o2= new Owner();
         o2.setFirstName("Bob");
@@ -56,9 +69,15 @@ remember to annotate with serve the implementation ...ServiceMap
         o2.setAddress("Viena");
         o2.setCity("Viena city");
         o2.setTelefone("000000000021");
+
+        Pet bobsPet= new Pet();
+        bobsPet.setPetType(petTypeCat);//first we handle pettype [the most nested]
+        bobsPet.setName("Good Cat");
+        bobsPet.setBirthDate(LocalDate.now());
+        bobsPet.setOwner(o1); //add owner then add to owner
+        o2.getPets().add(bobsPet);
+
         ownerService.save(o2);
-
-
 
         Vet v1= new Vet();
         v1.setFirstName("Lucky");
