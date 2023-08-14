@@ -4,6 +4,8 @@ import java.util.Set;
 
 /**
  * Created by r.edward on {07/08/2023}
+ * If we wwanted to add a pet we would need to add some logic to mimic
+ * what hibernate does auto.
  */
 public class Owner extends Person{
     private Set<Pet> pets;

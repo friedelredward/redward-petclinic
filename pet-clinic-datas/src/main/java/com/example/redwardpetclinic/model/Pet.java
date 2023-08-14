@@ -7,9 +7,18 @@ import java.time.LocalDate;
  */
 public class Pet extends BaseEntity{
     /*write type first then with intelij create class*/
+    private String name;
     private PetType petType;
     private Owner owner;
     private LocalDate birthDate;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public PetType getPetType() {
         return petType;
