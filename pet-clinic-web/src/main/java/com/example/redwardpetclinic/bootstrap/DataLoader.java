@@ -45,12 +45,20 @@ remember to annotate with serve the implementation ...ServiceMap
         Owner o1= new Owner();
         o1.setFirstName("bill");
         o1.setId(1L);
+        o1.setAddress("Miami etc");
+        o1.setCity("miami city");
+        o1.setTelefone("00000000000");
         ownerService.save(o1);
 
         Owner o2= new Owner();
         o2.setFirstName("Bob");
         o2.setId(2L);
+        o2.setAddress("Viena");
+        o2.setCity("Viena city");
+        o2.setTelefone("000000000021");
         ownerService.save(o2);
+
+
 
         Vet v1= new Vet();
         v1.setFirstName("Lucky");
