@@ -15,7 +15,8 @@ public class VetController {
     public VetController(VetService vetService) {
         this.vetService = vetService;
     }
-
+/** different type of mapping,
+ * note no root path on the controller*/
     /*multiplicity is for user friendly*/
     @RequestMapping({
             "/vets",
