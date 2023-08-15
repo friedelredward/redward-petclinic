@@ -19,7 +19,11 @@ Beware el dataload (boostrap se hace en el modulo web no el de datos) , pure mod
 ### [Thymeleaf_CheatSheet](https://github.com/engma/thymeleaf-cheat-sheet)
 - thymelaf template have inheritance so BEWARE of the html sintax and structure!!!!
 
-### [(How to manage ENV variables  PDF_here)](https://github.com/friedelredward/redward-petclinic/ExternalPropertiesOverview.pdf)
+### [(How to manage ENV variables  PDF_here)](https://github.com/friedelredward/redward-petclinic/blob/main/ExternalPropertiesOverview.pdf)
 - Also spring Cloud Config as alternative
 - DOCs Externalized Configuration : https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-external-config
+
+### JPA
+[(101  PDF_here)]("https://github.com/friedelredward/redward-petclinic/blob/main/JPA+Entity+Relationships.pdf")
+
 
