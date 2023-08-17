@@ -3,6 +3,8 @@ package com.example.redwardpetclinic.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by r.edward on {07/08/2023}
@@ -22,36 +24,30 @@ public class Pet extends BaseEntity{
     @JoinColumn(name = "owner_id")
     private Owner owner;
 
-
-    public String getName() {
-        return name;
-    }
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+    private Set<Visit> visits= new HashSet<>();
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public PetType getPetType() {
-        return petType;
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 
     public void setPetType(PetType petType) {
         this.petType = petType;
     }
 
-    public Owner getOwner() {
-        return owner;
-    }
-
     public void setOwner(Owner owner) {
         this.owner = owner;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
+    public Set<Visit> getVisits() {
+        return visits;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
     }
 }

@@ -1,14 +1,21 @@
 package com.example.redwardpetclinic.model;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 /**
  * Created by r.edward on {14/08/2023}
  */
+@Entity
+@Table(name = "visits")
 public class Visit extends BaseEntity {
-    LocalDate date;
-    String description;
-    Pet pet;
+    @Column(name = "date") private LocalDate date;
+    @Column(name = "description") private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "pet_id")
+    private Pet pet;
 
     public LocalDate getDate() {
         return date;
