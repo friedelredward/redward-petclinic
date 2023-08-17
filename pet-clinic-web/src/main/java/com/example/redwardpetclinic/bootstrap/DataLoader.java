@@ -1,10 +1,7 @@
 package com.example.redwardpetclinic.bootstrap;
 
 import com.example.redwardpetclinic.model.*;
-import com.example.redwardpetclinic.services.OwnerService;
-import com.example.redwardpetclinic.services.PetTypeService;
-import com.example.redwardpetclinic.services.SpecialtyService;
-import com.example.redwardpetclinic.services.VetService;
+import com.example.redwardpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +16,7 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
 /*lets inject this the spring way!!
 remember to annotate with serve the implementation ...ServiceMap
@@ -28,12 +26,17 @@ remember to annotate with serve the implementation ...ServiceMap
         vetService = new VetServiceMap();
     }*/
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService,
+                      VetService vetService,
+                      PetTypeService petTypeService,
+                      SpecialtyService specialtyService,
+                      VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
 
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -101,6 +104,13 @@ remember to annotate with serve the implementation ...ServiceMap
 
         ownerService.save(o2);
 
+        Visit catVisit= new Visit();
+        catVisit.setPet(bobsPet);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Smelly kitty, BobsCat");
+
+        visitService.save(catVisit);
+
         Vet v1= new Vet();
         v1.setFirstName("Lucky");
         v1.setLastName("Friedel");
@@ -114,6 +124,7 @@ remember to annotate with serve the implementation ...ServiceMap
         v2.setId(2L);
         v2.getSpecialties().add(savedSurgery);
         vetService.save(v2);
+
         System.out.println("loaded Owners and Vets");
     }
 }
