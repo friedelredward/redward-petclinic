@@ -2,6 +2,7 @@ package com.example.redwardpetclinic.services.map;
 
 import com.example.redwardpetclinic.model.Pet;
 import com.example.redwardpetclinic.services.PetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -11,6 +12,7 @@ import java.util.Set;
  * We could make the abstract implement th interface CRUD and then extend
  */
 @Service
+@Profile({"default", "map"})
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {

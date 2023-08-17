@@ -2,6 +2,7 @@ package com.example.redwardpetclinic.services.map;
 
 import com.example.redwardpetclinic.model.PetType;
 import com.example.redwardpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
  */
 /*sin service Spring no lo ve!!!! OJO remember!! thjis is the impl we need in the container!!*/
 @Service
+@Profile({"default", "map"})
 public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
     @Override
     public Set<PetType> findAll() {
