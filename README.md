@@ -28,7 +28,15 @@ Beware el dataload (boostrap se hace en el modulo web no el de datos) , pure mod
 
 - Spring data JPA uses a framework like hibernate to 
 enhance the persistence API.
-- 
+- Declaring an Implementation *For the same service* will produce:
+![img.png](img.png)
+  - so it's very important to declare 1 primary or set the profiles functinality 
+  as intended in the beginning
+````java
+@Service
+@Profile("springdatajpa") //< ---this is not gonna be invoked when not active.profile 
+public class OwnerJPAService implements OwnerService { /*...*/}
+````
 
 
 

@@ -27,16 +27,32 @@ public class Pet extends BaseEntity{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits= new HashSet<>();
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
+    public PetType getPetType() {
+        return petType;
+    }
+
     public void setPetType(PetType petType) {
         this.petType = petType;
+    }
+
+    public Owner getOwner() {
+        return owner;
     }
 
     public void setOwner(Owner owner) {
