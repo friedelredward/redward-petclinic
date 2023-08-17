@@ -26,4 +26,9 @@ Beware el dataload (boostrap se hace en el modulo web no el de datos) , pure mod
 ### JPA
 [(101  PDF_here)]("https://github.com/friedelredward/redward-petclinic/blob/main/JPA+Entity+Relationships.pdf")
 
+- Spring data JPA uses a framework like hibernate to 
+enhance the persistence API.
+- 
+
+
 
