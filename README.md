@@ -37,6 +37,20 @@ enhance the persistence API.
 @Profile("springdatajpa") //< ---this is not gonna be invoked when not active.profile 
 public class OwnerJPAService implements OwnerService { /*...*/}
 ````
+-------------
+### Lombok
+ Common utilities through annotations like getters and setters loggers etc
+- CUTS  down boilerplate code
+  [(Lombok PDF_here)]("https://github.com/friedelredward/redward-petclinic/blob/main/OverviewOfLombok.pdf")
+- val, var, @NonNull @Cleanup(will close on finally block) @Getter @Setter @ToString @EqualsAndHashCode
+- @NoArgsConstructor @AllArgConstructor @Data is a combo of all with @RequiredArgsConstructor.
+- @Value: like data but all fields are final and private
+- @Builder: implments a builder pattern
+- @SneakyThrows
+- @Syncronized
+- @Getter(lazy=true) for expensive getters (activates a cache)
+- @Log and @Slf4j (better) or logback is by default from Spring
+
 
 
 
