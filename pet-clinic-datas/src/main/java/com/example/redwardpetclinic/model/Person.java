@@ -1,11 +1,15 @@
 package com.example.redwardpetclinic.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
+
 /**
  * Created by r.edward on {07/08/2023}
  */
+@MappedSuperclass
 public class Person extends BaseEntity {
-    private String firstName;
-    private String lastName;
+    @Column(name = "first_name") private String firstName;
+    @Column(name = "last_name") private String lastName;
 
     public String getFirstName() {
         return firstName;

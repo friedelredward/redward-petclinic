@@ -1,16 +1,27 @@
 package com.example.redwardpetclinic.model;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 /**
  * Created by r.edward on {07/08/2023}
  */
+@Entity
+@Table(name = "pets")
 public class Pet extends BaseEntity{
     /*write type first then with intelij create class*/
-    private String name;
+    @Column(name = "name") private String name;
+    @Column(name = "birthDate") private LocalDate birthDate;
+
+    @ManyToOne
+    @JoinColumn(name = "type_id")
     private PetType petType;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
     private Owner owner;
-    private LocalDate birthDate;
+
 
     public String getName() {
         return name;
