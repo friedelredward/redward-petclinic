@@ -1,6 +1,6 @@
 package com.example.redwardpetclinic.services.map;
 
-import com.example.redwardpetclinic.model.Specialty;
+import com.example.redwardpetclinic.model.Speciality;
 import com.example.redwardpetclinic.model.Vet;
 import com.example.redwardpetclinic.services.SpecialtyService;
 import com.example.redwardpetclinic.services.VetService;
@@ -41,7 +41,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
         if(!object.getSpecialties().isEmpty()){
             object.getSpecialties().forEach(specialty->{
                 if (specialty.getId() == null){//set id with saved generated id
-                    Specialty savedSpecial=specialtyService.save(specialty);
+                    Speciality savedSpecial=specialtyService.save(specialty);
                     specialty.setId(savedSpecial.getId());
                 }
             });
