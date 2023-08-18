@@ -56,6 +56,11 @@ want to exclude thos from hash code generation from _@Data_, only in one side of
 relation, not both(in the smaller 1) pej ``@EqualsAndHashCode(exclude = {"recipe"})`` .
 - Please check _/recipies_ lombok-refactor *working* branch.
 
+----------
+
+### Testing
+
+[(intro PDF_here)]("https://github.com/friedelredward/redward-petclinic/blob/main/IntroTestingSpring.pdf")
 (test CircleCI)
 
 
