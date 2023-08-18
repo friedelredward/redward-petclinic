@@ -128,7 +128,8 @@ remember to annotate with serve the implementation ...ServiceMap
 
         System.out.println("Loaded Vets....");
     }
-/*    private void loadData() {
+/* compared this but cant see the difference but names yet.
+   private void loadData() {
         //we save these because we need them with id when we add them to
 //        bigger entity
         PetType petType= new PetType();
