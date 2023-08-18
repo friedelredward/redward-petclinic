@@ -50,6 +50,11 @@ public class OwnerJPAService implements OwnerService { /*...*/}
 - @Syncronized
 - @Getter(lazy=true) for expensive getters (activates a cache)
 - @Log and @Slf4j (better) or logback is by default from Spring
+- Lombok with 2 way binding might create Stack overflow
+because circular reference in ``hashCode()`` pej. so we might
+want to exclude thos from hash code generation from _@Data_, only in one side of the 
+relation, not both(in the smaller 1) pej ``@EqualsAndHashCode(exclude = {"recipe"})`` .
+- Please check _/recipies_ lombok-refactor *working* branch.
 
 
 
