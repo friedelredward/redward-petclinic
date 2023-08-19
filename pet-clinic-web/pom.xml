@@ -16,6 +16,8 @@
         <webjars-jquery-ui.version>1.13.0</webjars-jquery-ui.version>
         <webjars-jquery.version>3.5.0</webjars-jquery.version>
         <wro4j.version>1.9.0</wro4j.version>
+        <!--TODO fix wro4j https://github.com/wro4j/wro4j-->
+       <!-- <wro4j.version>2.0.0</wro4j.version>-->
     </properties>
     <dependencies>
         <!--make it depend on the other project-->
@@ -92,14 +94,14 @@
                         <artifactId>bootstrap</artifactId>
                         <version>${webjars-bootstrap.version}</version>
                     </dependency>
-                    <dependency>
+<!--                    <dependency>
                         <groupId>org.mockito</groupId>
                         <artifactId>mockito-core</artifactId>
                         <version>2.23.0</version>
-                    </dependency>
+                    </dependency>-->
                 </dependencies>
             </plugin>
-                        <plugin>
+            <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <configuration>
@@ -120,7 +122,6 @@
                         </execution>
                     </executions>
                 </plugin>
-
         </plugins>
     </build>
 </project>

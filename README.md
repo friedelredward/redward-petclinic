@@ -1,6 +1,7 @@
 # redward-petclinic
+- ==status==
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/friedelredward/redward-petclinic/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/friedelredward/redward-petclinic/tree/main)
 
-- Closes #2.  closes issue.
 - OJO multi Module al hacer refactor:
   - Ojo con la ruta al hacer refactoR!! needs package and route 
   como en app origina con artifact inverted
@@ -62,6 +63,24 @@ relation, not both(in the smaller 1) pej ``@EqualsAndHashCode(exclude = {"recipe
 
 [(intro PDF_here)]("https://github.com/friedelredward/redward-petclinic/blob/main/IntroTestingSpring.pdf")
 (test CircleCI)
+
+- Mockito: ``@ExtendWith(MockitoExtension.class)``
+   - ``@Mock  OwnerRepository ownerRepository;``
+   - ``@InjectMocks  OwnerJPAService service;``
+- MockMvc  for testing controllers:
+```` 
+mockMvc= MockMvcBuilders.standaloneSetup(controller).build();
+//then
+    @Test
+    void listOwnersByIndex() throws Exception {
+        when(ownerService.findAll()).thenReturn(ownersSet);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/owners/index"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("owners/index"))
+                .andExpect(model().attribute("owners", hasSize(2)));
+    }
+- ````
 
 
 
