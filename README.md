@@ -63,6 +63,10 @@ relation, not both(in the smaller 1) pej ``@EqualsAndHashCode(exclude = {"recipe
 [(intro PDF_here)]("https://github.com/friedelredward/redward-petclinic/blob/main/IntroTestingSpring.pdf")
 (test CircleCI)
 
+- Mockito: ``@ExtendWith(MockitoExtension.class)``
+   - ``@Mock  OwnerRepository ownerRepository;``
+   - ``@InjectMocks  OwnerJPAService service;``
+
 
 
 
