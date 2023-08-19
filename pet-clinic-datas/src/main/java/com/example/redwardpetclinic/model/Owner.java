@@ -1,6 +1,7 @@
 package com.example.redwardpetclinic.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,6 +12,11 @@ import java.util.Set;
  * what hibernate does auto.
  */
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Table(name = "owners")
 public class Owner extends Person{
     /** If an owner gets deleted, delete also the other parts of relation*/
@@ -18,36 +24,4 @@ public class Owner extends Person{
     @Column(name = "address") private String address;
     @Column(name = "city") private String city;
     @Column(name = "telefone") private String telefone;
-
-    public Set<Pet> getPets() {
-        return pets;
-    }
-
-    public void setPets(Set<Pet> pets) {
-        this.pets = pets;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
 }
