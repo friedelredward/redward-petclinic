@@ -8,7 +8,7 @@ jobs:
     working_directory: ~/project/redward-petclinic
     steps:
       - checkout:
-          path: ~/project
+          path: ~/project/redward-petclinic
       - run:
           name: Calculate cache key
           command: |-
