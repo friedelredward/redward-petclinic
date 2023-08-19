@@ -1,6 +1,7 @@
 # redward-petclinic
+- ==status==
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/friedelredward/redward-petclinic/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/friedelredward/redward-petclinic/tree/main)
 
-- Closes #2.  closes issue.
 - OJO multi Module al hacer refactor:
   - Ojo con la ruta al hacer refactoR!! needs package and route 
   como en app origina con artifact inverted
