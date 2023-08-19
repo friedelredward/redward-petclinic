@@ -5,7 +5,7 @@ jobs:
   test-java:
     docker:
       - image: cimg/openjdk:17.0
-    working_directory: ~/project/mvc-recipes
+    working_directory: ~/project/redward-petclinic
     steps:
       - checkout:
           path: ~/project
