@@ -21,7 +21,7 @@ import static org.mockito.Mockito.*;
 /**
  * Created by r.edward on {19/08/2023}
  * we could have a context so db spins up and
- * we also test the persistence layer,
+ * we also test the persistence layer(JPA),
  * **but** would be much slower testing.
  * These are CRUD mocked test (without the request to the DB)
  */
@@ -46,10 +46,9 @@ class OwnerJPAServiceTest {
 
     @Test
     void findAll() {
-        Set<Owner> list= new HashSet<>();
         Owner owner2= new Owner();
         owner.setId(2L);
-        list.addAll(asList(owner, owner2));
+        Set<Owner> list = new HashSet<>(asList(owner, owner2));
 
         when(ownerRepository.findAll()).thenReturn(list);
 
