@@ -2,11 +2,6 @@
 - ==status==
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/friedelredward/redward-petclinic/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/friedelredward/redward-petclinic/tree/main)
 
-- OJO multi Module al hacer refactor:
-  - Ojo con la ruta al hacer refactoR!! needs package and route 
-  como en app origina con artifact inverted
-    (com.example.redwardpetclinic)
-
 - maven-release-plugin with developer connection
 ```
 mvn release:prepare
@@ -17,10 +12,17 @@ Beware el dataload (boostrap se hace en el modulo web no el de datos) , pure mod
 
 > tip: to DI:: ..private final ...Service; Alt+Enter> add Constructor parameter.
 
+
+> - OJO multi Module al hacer refactor:
+    >  - Ojo con la ruta al hacer refactoR!! needs package and route
+         como en app origina con artifact inverted
+         (com.example.redwardpetclinic)
+
+
 ### [Thymeleaf_CheatSheet](https://github.com/engma/thymeleaf-cheat-sheet)
 - thymelaf template have inheritance so BEWARE of the html sintax and structure!!!!
 
-### [(How to manage ENV variables  PDF_here)](https://github.com/friedelredward/redward-petclinic/blob/main/ExternalPropertiesOverview.pdf)
+### [How to manage ENV variables  PDF_here](https://github.com/friedelredward/redward-petclinic/blob/main/ExternalPropertiesOverview.pdf)
 - Also spring Cloud Config as alternative
 - DOCs Externalized Configuration : https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-external-config
 
@@ -42,7 +44,7 @@ public class OwnerJPAService implements OwnerService { /*...*/}
 ### Lombok
  Common utilities through annotations like getters and setters loggers etc
 - CUTS  down boilerplate code
-  [(Lombok PDF_here)]("https://github.com/friedelredward/redward-petclinic/blob/main/OverviewOfLombok.pdf")
+  [Lombok PDF_here]("https://github.com/friedelredward/redward-petclinic/blob/main/OverviewOfLombok.pdf")
 - val, var, @NonNull @Cleanup(will close on finally block) @Getter @Setter @ToString @EqualsAndHashCode
 - @NoArgsConstructor @AllArgConstructor @Data is a combo of all with @RequiredArgsConstructor.
 - @Value: like data but all fields are final and private
@@ -61,7 +63,7 @@ relation, not both(in the smaller 1) pej ``@EqualsAndHashCode(exclude = {"recipe
 
 ### Testing
 
-[(intro PDF_here)]("https://github.com/friedelredward/redward-petclinic/blob/main/IntroTestingSpring.pdf")
+[intro PDF_here]("https://github.com/friedelredward/redward-petclinic/blob/main/IntroTestingSpring.pdf")
 (test CircleCI)
 
 - Mockito: ``@ExtendWith(MockitoExtension.class)``
@@ -80,7 +82,7 @@ mockMvc= MockMvcBuilders.standaloneSetup(controller).build();
                 .andExpect(view().name("owners/index"))
                 .andExpect(model().attribute("owners", hasSize(2)));
     }
-- ````
+````
 
 
 
